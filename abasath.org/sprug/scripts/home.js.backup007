@@ -1,0 +1,218 @@
+$(document).ready(function()
+{
+      	$(".header").fadeIn(3000);
+});
+
+
+$( document ).ready(function(event)
+{
+	$('.subdiv').yarp({ colors: ['#777'], duration: 350});
+});
+
+//
+
+$( document ).ready(function(event)
+{		
+	$(".subdiv").click( function(event)
+	{
+		var target = document.getElementById(event.target.id);
+
+		console.log("Element '"+target.id+"' was clicked.");
+
+		//
+
+		var parent = document.getElementById(event.target.id).parentNode;
+
+		//
+
+		var count = document.getElementById(event.target.id).parentNode.children.length;
+
+		//
+
+		for(var a=0; a<count; a++)
+		{	
+			var current = parent.children[a];
+
+			//
+
+			console.log("Element id: "+current.id);
+
+			//
+
+			if( current.isSameNode(target) ) 		//current node is the clicked node
+			{
+				var direct = a;
+
+				console.log("Match @ "+a);
+
+				for(var b=0; b<count; b++)
+				{
+					var classname;
+				
+					//
+
+					if( parent.children[a+1].className.valueOf() == "subdiv".valueOf() ) return;
+
+					//
+
+					if( parent.children[a+b] )	//grab child classname	
+					{
+						classname = parent.children[a+b].className;
+					}
+					else break;			//oops, no child
+
+					//console.log("Classname :"+classname);
+
+					if( classname.valueOf() == "level2subdiv".valueOf() )
+					{
+						//console.log("Expand :"+classname);
+					
+						var isexpanded = parent.children[a+b].style.display == "block";
+
+						if( isexpanded ) parent.children[a+b].style.display = "none";
+
+						else parent.children[a+b].style.display = "block";
+					}
+					else {};	
+				}					
+			}
+		}
+	});
+});
+
+//
+
+$( document ).ready(function(event)
+{
+	$('.menu_item').click( function(event)
+	{
+		//alert("door");
+	
+		$( event.target ).parent().trigger("click"); //fire event for subdiv element actually
+	});
+
+        $('.primarydiv').click( function(event)
+	{
+		var length = $( event.target ).parent().children(".subdiv").length;
+
+//		alert( length );
+
+		var prefold;
+
+//		console.log( nodes.length + " children " );
+
+		//
+	
+		var nodes = $( event.target ).parent().children(".level2subdiv");
+
+		for(var i=0; i<nodes.length; i++)
+		{
+			var node = nodes[i];
+
+			if( node.style.display == "block" )
+			{
+				prefold = true;
+
+				node.style.display = "none";
+			}
+		}
+
+		//
+
+		if( prefold )
+		{
+			return;
+		}
+
+		//
+
+		var nodes = $( event.target ).parent().children(".subdiv");
+
+		for(var i=0; i<nodes.length; i++)
+		{
+			var node = nodes[i];
+
+			//
+
+			if( node.style.display == "block" ) 	//all 1st level children up;
+			{
+				node.style.display = "none";
+			}
+			else 	node.style.display = "block";
+		}			
+	});
+});
+
+//
+
+/*
+$( document ).ready(function()
+{
+	$('.subdiv').yarp({ colors: ['#777'], duration: 350});	
+
+	$('.primarydiv').yarp({ colors: ['#777'], duration: 350});
+});
+*/
+
+//
+
+$( document ).ready(function() 
+{
+	var star_count = 5;
+
+	//
+
+	console.log( $(".fa.fa-star").length );
+
+	//
+
+	$(".fa.fa-star").click(function()
+	{
+		console.log("click detected.");
+
+		//
+
+		var node = $(this);
+
+		var index = node.attr("id");
+
+		var checked = node.hasClass("checked");
+
+		//
+
+		console.log("node was #"+index+" and was " + (checked ? "already checked" : "not yet checked") ); 	
+
+		//
+
+		if(checked && !$("span#"+index).hasClass("checked")) return; //simply return
+		
+		//	
+
+		var floor_index = Math.floor(index/5);
+
+		console.log("Math mod: "+floor_index);
+
+		var start_index = floor_index * star_count;
+
+		console.log("Start index: "+start_index);
+
+		//
+
+		for(var a=start_index; a<start_index+star_count; a++)
+		{
+			var _node = $("span#"+a);
+		
+			if(a<=index)
+			{
+				_node.addClass("checked");
+			}	
+
+
+			if(a>index)
+			{
+				_node.removeClass("checked");
+			}
+		}
+	});
+});
+

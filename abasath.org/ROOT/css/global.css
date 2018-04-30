@@ -1,0 +1,33 @@
+*{ margin:0px; padding:0px;}
+
+body{ font:normal 14px  calibri; color:#2D2D2D; background:#122533 url(../images/bg.jpg) repeat-x left top;}
+
+h1, h2, h3, h4, h5, h6, p, label, table, tr, td, ul, li, a, span, img { border:0px; padding:0px; margin:0px;}
+
+
+/*************************css start*************************/
+
+#container{ margin:0px auto; width:850px;}
+
+.topdiv{float:left; width:700px; background:url(../images/top-bg.jpg) no-repeat; padding:63px 90px 0 60px; text-align:center;}
+.topdiv h1{ font:normal 33px calibri; color:#2A2A2A; padding:20px 0 50px 0;}
+.topdiv h2{ font:bold 20px calibri; color:#201F1F; line-height:27px; padding:0 0 10px 0;}
+.topdiv h2 span{ color:#ED7214;}
+.topdiv h3{ font:bold 24px calibri; color:#201F1F;}
+.topdiv p{ text-align:left; font:normal 16px calibri; color:#2D2D2D; padding:28px 0 33px 0;}
+.topdiv h4{ text-align:center; font:normal 18px calibri; color:#201F1F; padding:0 0 37px 0;}
+.topdiv h4 img{ vertical-align:middle; margin:0 0 0 5px;}
+
+.botdiv{float:left; width:700px; padding:0px 90px 15px 60px;}
+.hostdiv{float:left; width:165px; margin:0 13px 0 0; padding:0 0 35px 0;}
+.hostdiv2{float:left; width:165px; padding:0 0 35px 0;}
+.bluediv{float:left; width:165px; background:url(../images/blue.png) no-repeat; height:108px;}
+.bluediv h2{ font:normal 19px calibri; color:#fff; text-align:center; line-height:19px; padding:13px 0;}
+.bluediv h3{ font:normal 28px calibri; color:#fff; text-align:center; padding:3px 0 0 0;}
+.bluediv h3 span{ font-size:13px;}
+.whitediv{float:left; width:165px; background:url(../images/white.png) no-repeat; min-height:115px;}
+.whitediv p{ padding:24px 0 0 0; text-align:center;}
+
+#footer{float:left; width:100%; border-top:1px solid #0C1A23;}
+.footdiv{ margin:0px auto; padding:0px 90px 0 60px; width:700px; text-align:center;}
+.footdiv p{ padding:30px 0; font:normal 11px calibri; color:#485E6E;}

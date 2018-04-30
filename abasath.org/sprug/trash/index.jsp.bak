@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html style="margin:0; padding:0;">
+
+    	<head id="head" class="sprug" style="background-color: red;">
+
+       	<title>Sprug Available 1.0</title>
+
+ 	<meta charset="utf-8" />
+
+	//
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<link rel="shortcut icon" href="/brand/favicon.ico?1521385311" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Abel|Passion+One:400,700,900|Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Saira+Extra+Condensed" rel="stylesheet">
+
+	<link href="./css/base.css" rel="stylesheet">
+
+	//
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+   	</head>
+
+	<body onload="hide()" class="" style="background-color: #333; margin:0px; padding:0px; background-repeat: no-repeat;">
+
+	<jsp:include page="header.jsp" />
+
+	<jsp:include page="menu.jsp" />
+
+        <jsp:include page="footer.jsp" />
+
+	</body>
+
+</html>
+
+
+
+

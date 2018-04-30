@@ -1,0 +1,416 @@
+<html>
+
+	<link href="./css/weather-icons.css" rel="stylesheet" type="text/css" media="all">
+
+	<link href="./css/weather-icons-wind.css" rel="stylesheet" type="text/css" media="all">
+
+	<script src="./scripts/Chart.bundle.js"></script>
+
+	<script src="./scripts/charts-impl.js"></script>
+
+	<!-- -->
+	
+	<jsp:include page="../header.jsp" />
+
+	<jsp:include page="../menu.jsp" />
+
+	<jsp:include page="../subheader.jsp" flush="true"/>
+
+	<div id="" style="position: relative; top: 5px; min-height:1000px; flex:0; border-radius: 5px; overflow:hidden; overflow-y: auto; background-color:none; font-family:Quicksand; background-repeat: no-repeat;">
+
+			<!-- start empty div -->
+
+			<!-- end empty div -->
+
+			<!-- start content div -->
+
+                        <div class="page" style="display:block; z-index:1; padding:5px; border-radius: 5px 5px 5px 5px; margin: 0px;">
+
+				<!-- end search options -->
+
+				<!-- start national weather -->
+
+                                <div style="margin:5px;">
+
+        <div id="" class="header" style="background-color: #555; position: relative; display: none; background: radial-gradient(at 50% 0%, #222, #181818, #111); border-top: 1px solid #202020; border-bottom: 1px solid #111; border-ra
+dius: 5px 5px 5px 5px; position:relative; margin-bottom: 04px; padding: 4px;">
+
+<i class="wi wi-night-sleet" style="font-size: 08px; color: #fff; margin: 4px;"><p style='display: inline; font-family:Quicksand; font-weight: 400; font-size:08px; border-radius: 15px 5px 15px 5px;'>&nbsp;national report:</p></i>
+
+        </div>
+
+                                        <div style="background-color: #121212; min-height:800px; margin:1px; padding: 1px; background-color: none;">
+
+						<script>
+
+							//alert("Script successfully entered."); 
+
+							var list = [79936,90011,60629,90650,90201,77084,92335,78521,77449,78572,90280,11226,90805,91331,27278,90210,12345];
+						
+							var xmlhttp;
+
+							if (window.XMLHttpRequest) 
+							{
+					    			// code for modern browsers
+    								xmlhttp = new XMLHttpRequest();
+ 							} 
+							else 
+							{
+	    							// code for old IE browsers
+    								xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+							}
+
+							//
+
+                                                        document.write("<table class='weather_table' style='width:100%; color: #fff; border-collapse: separate; border-spacing: 2px;'>");
+
+                                                        document.write("<thead class='weather_thead' style='padding: 10px; margin: 10px;'>");
+
+                                                        document.write("<tr>");
+
+                                                        document.write("<th>expand</th>");
+
+                                                        document.write("<th>location</th>");
+
+                                                        document.write("<th>temperature</th>");
+
+                                                        document.write("<th>weather</th>");
+
+                                                        document.write("<th>detail</th>");
+
+                                                        document.write("<th>barometer</th>");
+
+                                                        document.write("<th>wind direction</th>");
+
+                                                        document.write("<th>wind speed</th>");
+
+                                                        document.write("<th>sunrise</th>");
+
+                                                        document.write("<th>sunset</th>");
+
+                                                        document.write("</tr>");
+
+                                                        document.write("</thead>");
+
+							//
+							
+							for(var a=0; a<list.length; a++)
+							{
+
+							xmlhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?zip="+list[a]+",us&appid=2d35ec638192fdbd36303125180a98cf", false);
+
+							xmlhttp.send();
+
+							//
+
+							var response = xmlhttp.responseText;
+
+							//alert(response);
+
+							//
+
+							var json = JSON.parse(response);
+
+							if(!json) 
+							{
+								continue;
+							}	
+							
+							var temperature = Math.floor(json.main.temp * (9/5) - 459);
+							var barometer = json.main.pressure;
+							var weather = json.weather[0].main;
+							var detail = json.weather[0].description.charAt(0).toUpperCase() + json.weather[0].description.slice(1);
+							var wind_speed = json.wind.speed;
+							var wind_degree = json.wind.deg;
+							var wind_gust = json.wind.gust;
+							var _location = json.name +" "+ json.sys.country;					
+							var sunrise = new Date(1000*json.sys.sunrise).toUTCString();
+							var sunset = new Date(1000*json.sys.sunset).toUTCString();
+							
+							//
+
+							if(weather == "Clear") weather += "&nbsp;&nbsp;<i class='wi wi-day-sunny'></i>";						
+
+							//
+
+							document.write("<tr id=\""+(a)+"\">");
+
+                                                        document.write("<td onclick=\"toggle_chart_div('chart_"+a+"')\">");
+
+                                                                document.write("+");
+
+                                                        document.write("</td>");
+
+							document.write("<td onclick=\"five_day('90210');\">");
+
+								document.write(_location);
+
+							document.write("</td>");
+
+                                                        document.write("<td>");
+
+                                                                document.write(temperature);
+
+                                                        document.write("</td>");
+
+                                                        document.write("<td>");
+
+                                                                document.write(weather);
+
+                                                        document.write("</td>");
+
+                                                        document.write("<td>");
+
+                                                                document.write(detail);
+
+                                                        document.write("</td>");
+
+                                                        document.write("<td>");
+
+                                                                document.write(barometer);
+
+                                                        document.write("</td>");
+
+                                                        document.write("<td>");
+
+                                                                document.write(wind_degree);
+
+                                                        document.write("</td>");
+
+                                                        document.write("<td>");
+
+                                                                document.write(wind_speed);
+
+                                                        document.write("</td>");
+
+                                                        document.write("<td>");
+
+                                                                document.write(sunrise);
+
+                                                        document.write("</td>");
+
+                                                        document.write("<td>");
+
+                                                                document.write(sunset);
+
+                                                        document.write("</td>");
+							
+							document.write("</tr>");
+
+							/* .hidden div. */	
+
+                                                        document.write("<tr id=\"chart_"+(a)+"\" style=\"\">");
+
+                                                        document.write("<td colspan='10' style=\"\">");
+
+								document.write("<canvas id=\"canvas\" class=\"chartjs-render-monitor\" style=\"\" height=\"30\"></canvas>");
+
+                                                        document.write("</td>");							
+
+                                                        document.write("</tr>");					
+
+							}
+
+							document.write("</table>");
+
+						</script>
+
+                                        </div>
+
+                                </div>
+			
+				<!-- end content div -->
+	
+		</div>
+
+        </div>
+
+	<script>
+		function toggle_chart_div(id)
+		{
+			var toggle  = document.getElementById(id).style.display == "table-row" ? "none" : "table-row";
+
+			document.getElementById(id).style.display = toggle;
+
+			//
+
+			//window.myLine.canvas.parentNode.style.height = '430px';
+
+			//window.myLine.resize();
+		}
+
+	
+		var config = {
+			type: 'line',
+			data: {
+				labels: ['04-18-2018', '04-19-2018', '04-20-2018', '04-21-2018', '04-22-2018', '04-23-2018', '04-24-2018'],
+				datasets: [{
+					label: 'Temperature',
+					backgroundColor: 'rgb(101, 33, 14)',
+					borderColor: 'rgb(121, 43, 24)',
+					yAxisID: 'Temperature',
+					data: [
+						52,
+						56,
+						46,
+						88,
+						92,
+						24,
+						24
+					],
+					fill: false,
+				}, {
+					label: 'Barometric Pressure',
+					fill: false,
+					backgroundColor: 'rgb(120, 120, 120)',
+					borderColor: 'rgb(100, 100, 100)',
+					yAxisID: 'Barometer',
+					data: [
+                                                720,
+                                                660,
+                                                760,
+                                                780,
+                                                720,
+                                                1140,
+                                                1240
+					],
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: true,
+				title: {
+					display: true,
+					text: '5 Day Weather'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						}
+					}],
+	yAxes:[{
+        id: 'Temperature',
+        type: 'linear',
+        position: 'left',
+      }, {
+        id: 'Barometer',
+        type: 'linear',
+        position: 'right',
+        ticks: {
+          max: 1300,
+          min: 500
+        }
+      }]
+
+/*
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Value'
+						}
+					}]
+*/
+				}
+			}
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+		
+			window.myLine = new Chart(ctx, config);
+		};
+
+/*
+		window.onload = function() {
+
+			alert("Test harness loaded...");
+
+			var xmlhttp;
+
+			if (window.XMLHttpRequest) 
+			{
+				// code for modern browsers
+    				xmlhttp = new XMLHttpRequest();
+ 			} 
+			else 
+			{
+	    			// code for old IE browsers
+    				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			xmlhttp.open("GET", "https://api.openweathermap.org/data/2.5/forecast?zip=90210,us&appid=2d35ec638192fdbd36303125180a98cf", false);
+
+			xmlhttp.send();
+
+			//
+
+			var response = xmlhttp.responseText;
+
+			//
+
+			var json = JSON.parse(response);
+
+			//
+
+			console.log("JSON survived: "+(json!=null));
+
+function json_item()
+{
+	var date;
+	var temp;
+	var baro;
+};
+
+var json_items = new Array();
+
+var index = 0;
+
+var item;
+
+JSON.parse(response, (key, value) => 
+{
+	if(key.valueOf() == "dt".valueOf())
+	{	
+		json_items[index] = new json_item();
+	}
+
+	if(key.valueOf() == "temp".valueOf())
+	{
+		json_items[index].temp = value;
+	}
+
+        if(key.valueOf() == "pressure".valueOf())
+        {
+                json_items[index].baro = value;
+        }
+
+        if(key.valueOf() == "dt_txt".valueOf())
+        {
+                json_items[index].date = value;
+
+                index++;
+        }
+});
+
+console.log("Item count: "+(json_items.length));
+
+			alert("Test harness exited...");
+		};
+*/
+
+	</script>
+
+</html>
+

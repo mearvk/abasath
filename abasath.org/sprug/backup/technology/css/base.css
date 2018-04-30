@@ -1,0 +1,350 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table 
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+div
+{
+	font-size: 12px;
+}
+
+a
+{
+	font-family: "Quicksand";
+	font-size: 12px;
+}
+
+.button 
+{
+    background-color: #66d2d2; /*dd370a*/
+    border: none;
+    color: black;
+    padding: 5px 8px 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px 5px;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    border-radius: 8px;
+}
+
+p.menu_item
+{
+	pointer-events: none;
+}
+
+.button:hover
+{
+	background-color: #44b2b2;
+}
+.disabled 
+{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.sprug_select 
+{
+	font-family: 'Quicksand', cursive;
+	font-weight: 400;
+    	font-size: 14px;
+    	border-radius: 5px;
+    	background-color: #666;
+    	border: 5px solid transparent;
+}
+
+select
+{
+	color: white;
+}
+
+.checked
+{
+	color: orange;
+}
+
+.primarydiv 
+{
+    	font-family: 'Quicksand';
+    	font-size: 12px;
+	font-weight: 400;
+    	display: inline-block;
+    	height: 20px !important;
+    	background-color: rgba(30,30,30,0.87);
+    	margin: 2px;
+    	padding: 6px;
+	padding-top: 6px;
+    	box-shadow: 0px 2px 2px #111;
+    	border-style: solid;
+    	border-color: #65210e;
+    	border-radius: 5px 5px 5px 5px;
+    	color: #888;
+	cursor: pointer;
+    	flex: 0 0 20px !important;
+    	text-align: left;
+    	vertical-align: middle;
+    	user-select: none;
+    	-webkit-touch-callout: none;
+    	-webkit-user-select: none; /* Webkit */
+    	-moz-user-select: none;    /* Firefox */
+    	-ms-user-select: none;   
+	z-index: 2;
+	position: relative;
+}
+
+.primarydiv:hover
+{
+	background-color: #222;
+	box-shadow: 0px 2px 5px #111;
+	color: #fff;
+}
+
+.pageheader
+{
+        border-radius: 5px 5px 5px 5px;
+        color: #ccc;
+        cursor: pointer;
+        display: none;
+        background-color: #333;
+        box-shadow: 0px 2px 7px #111;
+        font-family: "Quicksand";
+        font-size: 08px;
+        font-weight: 200;
+        margin: 5px;
+        padding: 5px;
+        z-index: 2;
+        position: relative;
+}
+
+.page
+{
+        border-radius: 5px 5px 5px 5px;
+        color: #ccc;
+        cursor: pointer;
+        display: none;
+        background-color: #333;
+        box-shadow: 0px 2px 7px #111;
+        font-family: "Quicksand";
+        font-size: 08px;
+        font-weight: 200;
+        margin: 5px;
+        padding: 5px;
+        z-index: 2;
+        position: relative;
+}
+
+.level2subdiv
+{
+        border-radius: 5px 5px 5px 5px;
+        color: #ccc;
+        cursor: pointer;
+        display: none;
+        background-color: #444;
+        box-shadow: 0px 2px 7px #111;
+        font-family: "Quicksand";
+        font-size: 13px;
+        font-weight: 200;
+        margin: 5px;
+        padding: 5px;
+        z-index: 2;
+        position: relative;
+        height: 16px;
+        flex: 0 0 18px; 
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.level2subdiv:hover
+{
+        background-color: #333338;
+}
+
+.subdiv 
+{
+    	border-radius: 5px 5px 5px 5px;
+    	color: #ccc;
+    	cursor: pointer;
+    	display: none;
+    	background-color: #333;
+	box-shadow: 0px 2px 7px #111;
+    	font-family: "Quicksand";
+    	font-size: 13px;
+	font-weight: 200;
+    	margin: 5px;
+    	padding: 5px;
+        z-index: 2;
+        position: relative;
+	height: 16px;
+	flex: 0 0 18px !important;
+}
+
+.subdiv:nth-child(even) 
+{
+    background-color: #444;
+}
+
+.subdiv:nth-child(even):hover 
+{
+    	background-color: #333336;
+}
+
+.subdiv:nth-child(odd) 
+{
+    background-color: #444;
+}
+
+.subdiv:nth-child(odd):hover 
+{
+    background-color: #333;
+}
+
+#header 
+{
+    width: 100%;
+}
+
+a:visited 
+{
+    color: #ccc;
+}
+
+a 
+{
+    color: #eee;
+}
+
+a:hover 
+{
+    color: #fff;
+}

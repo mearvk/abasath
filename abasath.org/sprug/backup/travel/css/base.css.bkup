@@ -1,0 +1,324 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.button {
+    background-color: #dd370a;
+    border: none;
+    color: black;
+    padding: 5px 8px 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px 5px;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    border-radius: 8px;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.sprug_select {
+    font-family: 'Quicksand', cursive;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #aaa;
+    border: 5px solid transparent;
+}
+
+.primarydiv 
+{
+    font-family: 'Quicksand';
+    font-size: 16px;
+    display: inline-block;
+    height: 20px;
+    background: linear-gradient(to bottom, #222, #222);
+    margin: 2px;
+    padding: 6px;
+    box-shadow: 0px 2px 15px #111;
+    border-style: solid;
+    border-color: #65210e;
+    border-radius: 5px 5px 5px 5px;
+    color: #ddd;
+    flex: 0 0 140px;
+    text-align: left;
+    vertical-align: middle;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Webkit */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;   
+}
+
+#menu1_subdiv 
+{
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border-left: 0px solid #555;
+}
+
+#menu2_subdiv 
+{
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border-left: 0px solid #555;
+}
+
+#menu3_subdiv 
+{
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border-left: 0px solid #555;
+}
+
+#menu4_subdiv 
+{
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border-left: 0px solid #555;
+}
+
+#menu5_subdiv {
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border-left: 0px solid #555;
+}
+
+#menu6_subdiv {
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border-left: 0px solid #555;
+}
+
+#menu7_subdiv {
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border-left: 0px solid #555;
+}
+
+.subdiv 
+{
+    border-radius: 5px 5px 5px 5px;
+    color: #bbb;
+    cursor: pointer;
+    display: none;
+    background-color: #333;
+    font-family: "Quicksand";
+    font-size: 14px;
+    margin: 5px;
+    padding: 5px;
+    z-index: 2;
+    position: relative;
+}
+
+.subdiv:nth-child(even) 
+{
+    background-color: #444;
+}
+
+.subdiv:nth-child(even):hover 
+{
+    	background-color: #333;
+}
+
+.subdiv:nth-child(odd) 
+{
+    background-color: #444;
+}
+
+.subdiv:nth-child(odd):hover 
+{
+    background-color: #333;
+}
+
+#menu1_subdiv:hover {
+    color: #888;
+}
+
+#menu2_subdiv:hover {
+    color: #888;
+}
+
+#menu3_subdiv:hover {
+    color: #888;
+}
+
+#menu4_subdiv:hover {
+    color: #888;
+}
+
+#menu5_subdiv:hover {
+    color: #888;
+}
+
+#menu6_subdiv:hover {
+    color: #888;
+}
+
+#menu7_subdiv:hover {
+    color: #888;
+}
+
+#header {
+    width: 100%;
+}
+
+a:visited {
+    color: #ccc;
+}
+
+a {
+    color: #eee;
+}
+
+a:hover {
+    color: #fff;
+}
